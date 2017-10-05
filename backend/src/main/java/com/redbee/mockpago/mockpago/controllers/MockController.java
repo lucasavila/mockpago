@@ -34,12 +34,11 @@ public class MockController {
         JSONObject retornoJson = new JSONObject(jsonEntrada);
         log.info("jsonEntrada: " + retornoJson);
         Map mapa = new HashMap<String, String>();
-        String uuid = generarUUID();
-        String url = "sepdesa.colonseguros.com.ar/mockfront/";
-        mapa.put("id", uuid);
-        mapa.put("url", url);
+        String url = "sepdesa.colonseguros.com.ar/mockfront/#!/redirect/"+ mapa.get("id");
 
+        mapa.put("url", url);
         return mapa;
     }
+
 
 }

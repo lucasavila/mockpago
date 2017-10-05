@@ -24,7 +24,12 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/redirect/:uuid', {
+        templateUrl: 'views/inicio.html',
+        controller: 'InicioCtrl',
+        controllerAs: 'inicio'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/redirect/:uuid'
       });
   });
