@@ -1,0 +1,12 @@
+b2c_frontend:
+  extends:
+    file: ../common.yml
+    service: b2c_frontend
+  links:
+    - b2c_backend:backend
+b2c_backend:
+  extends:
+    file: ../common.yml
+    service: b2c_backend
+  environment:
+  - SPRING_PROFILES_ACTIVE=testing

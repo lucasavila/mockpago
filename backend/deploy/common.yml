@@ -1,0 +1,17 @@
+mock_frontend:
+        image: docker.dev.redbee.io/mock_frontend
+        container_name: "mock_frontend"
+        ports:
+            - "9989:80"
+        restart: "always"
+
+mock_backend:
+        image: docker.dev.redbee.io/mock_backend
+        container_name: "mock_backend"
+        ports:
+            - "8989:8080"
+        external_links:
+            - redis-cache-container:redis_server
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/timezone:/etc/timezone:ro
