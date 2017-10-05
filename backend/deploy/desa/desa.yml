@@ -1,10 +1,10 @@
-b2c_frontend:
+mock_frontend:
   extends:
     file: ../common.yml
     service: mock_frontend
   links:
     - mock_backend:backend
-b2c_backend:
+mock_backend:
   extends:
     file: ../common.yml
     service: mock_backend
