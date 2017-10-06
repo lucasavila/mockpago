@@ -35,7 +35,7 @@ public class MockController {
         log.info("jsonEntrada: " + retornoJson);
         Map mapa = new HashMap<String, String>();
         String uuid = generarUUID();
-        String url = "sepdesa.colonseguros.com.ar/mockfront/#!/redirect/"+ uuid;
+        String url = "http://sepdesa.colonseguros.com.ar/mockfront/#!/redirect/"+ uuid;
 
         mapa.put("url", url);
         mapa.put("id", uuid);
