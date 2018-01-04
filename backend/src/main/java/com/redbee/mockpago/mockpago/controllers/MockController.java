@@ -41,14 +41,14 @@ public class MockController {
 
         Map rutas = new HashMap<String, String>();
 
-        rutas.put("local","http://localhost:3000");
+        rutas.put("localhost","http://localhost:9989");
         rutas.put("testing","https://ecommercetest.ecolon.com.ar");
         rutas.put("preprod","https://ecommercepreprod.ecolon.com.ar");
 
         String server = (String) rutas.get(environment.getActiveProfiles()[0]);
 
         String uuid = generarUUID();
-        String url = server + "/#!/redirect/"+ uuid;
+        String url = server + "/#!/redirect/"+ uuid + "/" + environment.getActiveProfiles()[0];
 
         Map mapa = new HashMap<String, String>();
         mapa.put("url", url);
