@@ -9,4 +9,4 @@ mock_backend:
     file: ../common.yml
     service: mock_backend
   environment:
-  - SPRING_PROFILES_ACTIVE=development
+  - SPRING_PROFILES_ACTIVE=local

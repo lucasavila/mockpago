@@ -4,6 +4,7 @@ VERSION_NUMBER=latest
 IMAGENES="mock"
 
 cd /webapps/redbee/mockpago/deploy/
+#cd /home/lucas/proyectos/colon/mockpago/deploy/ 
 
 AMBIENTE_YML=""
 
