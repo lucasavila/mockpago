@@ -42,8 +42,8 @@ public class MockController {
         Map rutas = new HashMap<String, String>();
 
         rutas.put("localhost","http://localhost:9989");
-        rutas.put("testing","https://ecommercetest.ecolon.com.ar");
-        rutas.put("preprod","https://ecommercepreprod.ecolon.com.ar");
+        rutas.put("testing","https://septest.colonseguros.com.ar/mock_frontend");
+        rutas.put("preprod","https://seppreprod.colonseguros.com.ar/mock_frontend");
 
         String server = (String) rutas.get(environment.getActiveProfiles()[0]);
 
