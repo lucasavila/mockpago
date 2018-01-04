@@ -58,13 +58,12 @@ public class MockController {
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/emision", method = RequestMethod.POST, produces = "application/json")
-    public Map<String, String> emitir(@RequestBody String jsonEntrada) {
+    public String emitir(@RequestBody String jsonEntrada) {
         log.info("jsonEntrada: " + jsonEntrada);
         JSONObject retornoJson = new JSONObject(jsonEntrada);
         log.info("jsonEntrada: " + retornoJson);
-        Map mapa = new HashMap<String, String>();
-        mapa.put("algo","algovalue");
-        return mapa;
+        String jsonRespuesta = "{\"payment\":{\"platformId\":7578163,\"internalId\":\"59e0fb760fa4c13c99cdfcc6\",\"externalId\":\"\",\"status\":\"approved\"},\"plan\":{\"platformId\":\"d76790ee9095474cbd18a9593d3012cc\",\"internalId\":\"59e0fb7c0fa4c13c99cdfcc8\",\"externalId\":\"\"},\"subscription\":{\"platformId\":\"9fa6b496954f4f7b930c91514459731f\",\"internalId\":\"59e0fb7d0fa4c13c99cdfcc9\",\"status\":\"authorized\",\"externalReference\":\"4929199484374152\"},\"customer\":{\"platformId\":\"152324733-CNIkMQIAIBA0cS\",\"internalId\":\"59dfbf300fa4c13c99cdfc7a\"}}";
+        return jsonRespuesta;
     }
 
 
