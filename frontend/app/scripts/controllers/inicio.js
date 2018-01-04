@@ -10,8 +10,22 @@
 angular.module('frontendApp')
   .controller('InicioCtrl',['$routeParams','$scope', function ($routeParams, $scope) {
     this.awesomeThings = ['HTML5 Boilerplate','AngularJS','Karma'];
+
+    console.log($routeParams)
     $scope.id = $routeParams.uuid
-    console.log($scope.id)
-    $scope.url = "http://septest.colonseguros.com.ar/b2c/bienvenida?idTransaccion=" + $scope.id;
-    console.log($scope.url)
+
+    $scope.routes = {
+      localhost:"http://localhost:3000",
+      testing: "https://ecommercetest.ecolon.com.ar",
+      preprod: "https://ecommercepreprod.ecolon.com.ar"
+    }
+
+    $scope.server = eval("$scope.routes."+ $routeParams.server)
+    console.log($scope.server)
+
+    $scope.url = $scope.server + "/bienvenida?product=&_id=" + $scope.id + "&status=authorized&statusDetail=pending_capture";
+    $scope.urlReintento = $scope.server + "/bienvenida";
+
+    console.log("url: "+$scope.url)
+    console.log("urlReintento" + $scope.urlReintento)
   }]);

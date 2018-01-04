@@ -24,7 +24,7 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/redirect/:uuid', {
+      .when('/redirect/:uuid/:server', {
         templateUrl: 'views/inicio.html',
         controller: 'InicioCtrl',
         controllerAs: 'inicio'

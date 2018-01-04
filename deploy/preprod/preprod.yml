@@ -1,12 +1,12 @@
-b2c_frontend:
+mock_frontend:
   extends:
     file: ../common.yml
-    service: b2c_frontend
+    service: mock_frontend
   links:
-    - b2c_backend:backend
-b2c_backend:
+    - mock_backend:backend
+mock_backend:
   extends:
     file: ../common.yml
-    service: b2c_backend
+    service: mock_backend
   environment:
   - SPRING_PROFILES_ACTIVE=preprod

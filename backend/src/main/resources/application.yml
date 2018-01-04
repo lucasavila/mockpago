@@ -1,0 +1,38 @@
+server:
+    port: 8899
+---
+spring:
+    profiles: local
+    redis:
+        host: localhost
+        port: 6379
+    batch:
+          job:
+              enabled: false
+---
+spring:
+    profiles: development
+    batch:
+          job:
+              enabled: false
+    redis:
+          host: redis_server
+          port: 6379
+---
+spring:
+    profiles: testing
+    redis:
+         host: redis_server
+         port: 6379
+    batch:
+          job:
+              enabled: false
+---
+spring:
+    profiles: preprod
+    redis:
+               host: redis_server
+               port: 6379
+    batch:
+          job:
+              enabled: false
