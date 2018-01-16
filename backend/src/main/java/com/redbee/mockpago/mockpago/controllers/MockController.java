@@ -66,5 +66,14 @@ public class MockController {
         return jsonRespuesta;
     }
 
+    @CrossOrigin(origins = "*")
+    @RequestMapping(value = "/neotel", method = RequestMethod.POST, produces = "application/json")
+    public String emitir(@RequestBody String jsonEntrada) {
+        log.info("jsonEntrada: " + jsonEntrada);
+        JSONObject retornoJson = new JSONObject(jsonEntrada);
+        log.info("jsonEntrada: " + retornoJson);
+        String jsonRespuesta = "{\"ok\":\"true\"}";
+        return jsonRespuesta;
+    }
 
 }
